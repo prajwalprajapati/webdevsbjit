@@ -1,0 +1,29 @@
+
+<html>
+<head> 
+<title>My Basic HTML Page</title>
+</head>
+<body bgcolor="teal">
+<h1>Welcome to My Website</h1>
+<marquee direction="left">This is a scrolling message!!!!!</marquee>
+ <hr>
+<h3>My Top 3 Goals</h3>
+ <ol>
+        <li>Learn HTML structure</li>
+        <li>Master CSS styling</li>
+        <li>Build a personal portfolio</li>
+</ol>
+<h3>MY INFO</h3>
+<dl>
+        <dt>NAME:</dt>
+        <dd>Prajwal Prajapati</dd>
+        <dt>ROLL NUMBER:</dt>
+        <dd>CS25098</dd>
+</dl>
+  
+<h1>BE BATMAN</h1>
+<img src="C:\Users\CCLab\Documents\prajwal prajapati web dev\images\batman.jpg" width="500px"><br><br>
+<a href="prelab.html">prelab acticity</a>
+
+</body>
+</html>
