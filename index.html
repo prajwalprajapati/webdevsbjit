@@ -3,112 +3,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Practical Portfolio</title>
+    <title>Prajwal's Project Hub</title>
     <style>
-        /* Modern CSS Reset & Background */
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-color: #f8fafc;
+            --accent-1: #38bdf8; /* Blue */
+            --accent-2: #818cf8; /* Indigo */
+            --accent-3: #fb7185; /* Rose */
+            --accent-4: #34d399; /* Emerald */
+            --accent-5: #fbbf24; /* Amber */
+        }
+
         body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Inter', system-ui, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: #333;
+            min-height: 100vh;
+            margin: 0;
+            overflow-x: hidden;
         }
 
-        /* Glassmorphism Container */
-        .container {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-            width: 100%;
-            max-width: 450px;
+        /* Entrance Animation */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hub-container {
+            width: 90%;
+            max-width: 600px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        header {
             text-align: center;
+            margin-bottom: 40px;
         }
 
-        h1 {
-            margin-bottom: 30px;
-            font-size: 24px;
-            color: #4a4a4a;
-            border-bottom: 2px solid #764ba2;
-            display: inline-block;
-            padding-bottom: 10px;
+        h1 { font-size: 2.5rem; margin-bottom: 10px; background: linear-gradient(to right, #38bdf8, #818cf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+        .project-grid {
+            display: grid;
+            gap: 20px;
         }
 
-        .project-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        /* Styling each Link Item */
-        .project-item {
-            margin-bottom: 15px;
-        }
-
-        .project-link {
-            display: block;
+        /* The Card Design */
+        .project-card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 16px;
             text-decoration: none;
-            background: #fff;
-            padding: 15px;
+            color: inherit;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(255,255,255,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Floating Animation on Hover */
+        .project-card:hover {
+            transform: scale(1.05);
+            border-color: rgba(255,255,255,0.3);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+        }
+
+        /* The Little Colored Box */
+        .color-box {
+            width: 50px;
+            height: 50px;
             border-radius: 12px;
-            color: #764ba2;
-            font-weight: 600;
-            border: 1px solid #ddd;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
         }
 
-        /* Hover Animation */
-        .project-link:hover {
-            background: #764ba2;
-            color: white;
-            transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(118, 75, 162, 0.3);
-        }
+        .card-info h3 { margin: 0; font-size: 1.1rem; }
+        .card-info p { margin: 5px 0 0; font-size: 0.85rem; color: #94a3b8; }
 
-        .footer-text {
-            margin-top: 25px;
-            font-size: 0.9rem;
-            color: #888;
-        }
+        /* Custom Colors for each project */
+        .c1 { background: var(--accent-1); box-shadow: 0 0 15px var(--accent-1); }
+        .c2 { background: var(--accent-2); box-shadow: 0 0 15px var(--accent-2); }
+        .c3 { background: var(--accent-3); box-shadow: 0 0 15px var(--accent-3); }
+        .c4 { background: var(--accent-4); box-shadow: 0 0 15px var(--accent-4); }
+        .c5 { background: var(--accent-5); box-shadow: 0 0 15px var(--accent-5); }
+
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>Lab Practicals</h1>
-        
-        <div class="project-list">
-            <!-- Project 2 -->
-            <div class="project-item">
-                <a href="PRACTICAL 2" class="project-link">📂 Practical 02</a>
-            </div>
+    <div class="hub-container">
+        <header>
+            <h1>My Practicals</h1>
+            <p>Prajwal Prajapati | Lab Portfolio</p>
+        </header>
 
-            <!-- Project 3 -->
-            <div class="project-item">
-                <a href="practical3.html" class="project-link">📄 Practical 03</a>
-            </div>
+        <div class="project-grid">
+            <!-- Practical 2 -->
+            <a href="PRACTICAL 2" class="project-card">
+                <div class="color-box c1">02</div>
+                <div class="card-info">
+                    <h3>Practical Two</h3>
+                    <p>Core Concepts & Logic</p>
+                </div>
+            </a>
 
-            <!-- Project 5 -->
-            <div class="project-item">
-                <a href="practical5.html" class="project-link">📄 Practical 05</a>
-            </div>
+            <!-- Practical 3 -->
+            <a href="practical3.html" class="project-card">
+                <div class="color-box c2">03</div>
+                <div class="card-info">
+                    <h3>Practical Three</h3>
+                    <p>UI Design Elements</p>
+                </div>
+            </a>
 
-            <!-- Project 6 -->
-            <div class="project-item">
-                <a href="practical6.html" class="project-link">📄 Practical 06</a>
-            </div>
+            <!-- Practical 5 -->
+            <a href="practical5.html" class="project-card">
+                <div class="color-box c3">05</div>
+                <div class="card-info">
+                    <h3>Practical Five</h3>
+                    <p>Advanced Layouts</p>
+                </div>
+            </a>
+
+            <!-- Practical 6 -->
+            <a href="practical6.html" class="project-card">
+                <div class="color-box c4">06</div>
+                <div class="card-info">
+                    <h3>Practical Six</h3>
+                    <p>Interactive Components</p>
+                </div>
+            </a>
 
             <!-- Pre-Lab -->
-            <div class="project-item">
-                <a href="prelab.html" class="project-link">📝 Pre-Lab Assignment</a>
-            </div>
+            <a href="prelab.html" class="project-card">
+                <div class="color-box c5">📝</div>
+                <div class="card-info">
+                    <h3>Pre-Lab</h3>
+                    <p>Initial Research & Documentation</p>
+                </div>
+            </a>
         </div>
-
-        <p class="footer-text">Created by Prajwal Prajapati</p>
     </div>
 
 </body>
