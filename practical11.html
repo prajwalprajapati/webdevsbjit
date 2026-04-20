@@ -1,0 +1,170 @@
+
+<html>
+<head>
+
+<title>HTML5 Features Demo</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(to right, #11998e, #38ef7d);
+}
+
+h1 {
+    text-align: center;
+    color: white;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+.box {
+    background: white;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+h2 {
+    color: #2c3e50;
+}
+
+#dragItem, #dropArea {
+    width: 140px;
+    height: 140px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    margin-right: 15px;
+}
+
+#dragItem {
+    background: #ff6a00;
+    color: white;
+    cursor: grab;
+}
+
+#dropArea {
+    border: 2px dashed #333;
+    background: #ecf0f1;
+}
+
+#dropArea.active {
+    background: #dfe6e9;
+}
+
+button {
+    padding: 7px 14px;
+    border: none;
+    border-radius: 5px;
+    background: #2c3e50;
+    color: white;
+    cursor: pointer;
+}
+
+input {
+    padding: 7px;
+    margin-right: 10px;
+}
+
+p {
+    font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<h1>HTML5 API Demo</h1>
+
+<div class="container">
+
+<div class="box">
+<h2>Drag & Drop</h2>
+<div id="dragItem" draggable="true">Move</div>
+<div id="dropArea">Place Here</div>
+</div>
+
+<div class="box">
+<h2>Geolocation</h2>
+<button onclick="showLocation()">Find Location</button>
+<p id="geo"></p>
+</div>
+
+<div class="box">
+<h2>Local Storage</h2>
+<input type="text" id="userInput" placeholder="Type name">
+<button onclick="storeData()">Save</button>
+<button onclick="getData()">Show</button>
+<p id="result"></p>
+</div>
+
+</div>
+
+<script>
+const dragItem = document.getElementById("dragItem");
+const dropArea = document.getElementById("dropArea");
+
+dragItem.addEventListener("dragstart", function(e){
+    e.dataTransfer.setData("id", e.target.id);
+});
+
+dropArea.addEventListener("dragover", function(e){
+    e.preventDefault();
+    dropArea.classList.add("active");
+});
+
+dropArea.addEventListener("dragleave", function(){
+    dropArea.classList.remove("active");
+});
+
+dropArea.addEventListener("drop", function(e){
+    e.preventDefault();
+    dropArea.classList.remove("active");
+    const data = e.dataTransfer.getData("id");
+    const element = document.getElementById(data);
+    dropArea.appendChild(element);
+    element.textContent = "Done ✔";
+});
+
+function showLocation(){
+    const geo = document.getElementById("geo");
+
+    if(navigator.geolocation){
+        geo.innerHTML = "Loading...";
+        navigator.geolocation.getCurrentPosition(
+            function(pos){
+                geo.innerHTML =
+                    "Lat: " + pos.coords.latitude +
+                    "<br>Long: " + pos.coords.longitude;
+            },
+            function(err){
+                geo.innerHTML = "Error: " + err.message;
+            }
+        );
+    } else {
+        geo.innerHTML = "Not supported";
+    }
+}
+
+function storeData(){
+    const val = document.getElementById("userInput").value;
+    localStorage.setItem("user", val);
+    alert("Saved!");
+}
+
+function getData(){
+    const val = localStorage.getItem("user");
+    document.getElementById("result").textContent =
+        val ? "Saved Name: " + val : "No data";
+}
+</script>
+
+</body>
+</html>

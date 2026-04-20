@@ -1,0 +1,205 @@
+
+<html>
+<head>
+
+<title>Bootstrap Demo Site</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body {
+    background: #f4f6fb;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+}
+
+.hero {
+    background: linear-gradient(to right, #43cea2, #185a9d);
+    color: white;
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.card {
+    border-radius: 12px;
+    transition: 0.3s;
+}
+.card:hover {
+    transform: scale(1.05);
+}
+
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 12px;
+}
+</style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+<div class="container">
+    <a class="navbar-brand" href="#">DemoSite</a>
+
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        ☰
+    </button>
+
+    <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+
+            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Features</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">UI Design</a></li>
+                    <li><a class="dropdown-item" href="#">Backend</a></li>
+                    <li><a class="dropdown-item" href="#">Hosting</a></li>
+                </ul>
+            </li>
+
+        </ul>
+    </div>
+</div>
+</nav>
+
+<div class="hero">
+    <h1>Bootstrap Demo</h1>
+    <p>Explore responsive and modern UI components</p>
+</div>
+
+<div class="container mt-4">
+
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">Home</li>
+            <li class="breadcrumb-item">Section</li>
+            <li class="breadcrumb-item active">Overview</li>
+        </ol>
+    </nav>
+
+    <div class="row text-center mb-4">
+
+        <div class="col-md-4 mb-3">
+            <div class="card p-3 shadow">
+                <h5>Speed</h5>
+                <p>Fast loading interface.</p>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <div class="card p-3 shadow">
+                <h5>Design</h5>
+                <p>Modern UI components.</p>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <div class="card p-3 shadow">
+                <h5>Mobile</h5>
+                <p>Fully responsive layout.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-lg-6 mb-4">
+            <div class="card p-4 shadow">
+                <h4>Get in Touch</h4>
+
+                <form>
+                    <div class="mb-3">
+                        <label>Full Name</label>
+                        <input type="text" class="form-control">
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Email Address</label>
+                        <input type="email" class="form-control">
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Comments</label>
+                        <textarea class="form-control"></textarea>
+                    </div>
+
+                    <button class="btn btn-primary w-100" type="button" data-bs-toggle="modal" data-bs-target="#msgModal">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div class="col-lg-6 mb-4">
+            <div class="card p-4 shadow text-center">
+                <h4>About Project</h4>
+                <p>This site shows Bootstrap components like navbar, cards, modal, and grid system.</p>
+
+                <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#aboutModal">
+                    Read More
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="modal fade" id="msgModal">
+<div class="modal-dialog">
+<div class="modal-content">
+
+<div class="modal-header">
+    <h5 class="modal-title">Message Sent</h5>
+    <button class="btn-close" data-bs-dismiss="modal"></button>
+</div>
+
+<div class="modal-body">
+    Your message has been delivered successfully!
+</div>
+
+<div class="modal-footer">
+    <button class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+</div>
+
+</div>
+</div>
+</div>
+
+<div class="modal fade" id="aboutModal">
+<div class="modal-dialog">
+<div class="modal-content">
+
+<div class="modal-header">
+    <h5 class="modal-title">Project Info</h5>
+    <button class="btn-close" data-bs-dismiss="modal"></button>
+</div>
+
+<div class="modal-body">
+    Built using Bootstrap 5 with responsive layout and UI components.
+</div>
+
+<div class="modal-footer">
+    <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+</div>
+
+</div>
+</div>
+</div>
+
+<footer>
+    <p>© 2026 Demo Bootstrap Website</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
